@@ -64,8 +64,14 @@ executable (replace `<install_prefix>` with the installation path):
 
 macOS
 -----
-
 ### Installing dependencies
+#### Using Macports https://www.macports.org)
+
+    sudo port selfupdate
+    sudo port install cmake
+    sudo port install qt5
+
+#### Using Homebrew https://brew.sh
 
     brew install cmake
     brew install qt
@@ -77,9 +83,13 @@ Create a building directory and switch to it:
     mkdir build
     cd build
 
-Run cmake passing Qt location:
+Run cmake passing Qt location. 
 
-    cmake .. -DCMAKE_PREFIX_PATH=/usr/local/opt/qt
+    cmake ..
+
+CMake typically finds build prerequisites, but you can specify them if required:
+
+    cmake .. -DCMAKE_PREFIX_PATH=/usr/local/opt/qt #Homebrew
 
 Build using make:
 
@@ -87,5 +97,5 @@ Build using make:
 
 ### Installing
 
-    TODO
+    cp -r DwarfTherapist.app /Applications/
 
